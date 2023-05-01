@@ -1,0 +1,9 @@
+Criar o arquivo package.json
+npm init -y
+
+npm -> Gerenciador de pacotes
+init -> Comando que inicia
+-y -> Preenche informações
+
+Instalando a Biblioteca Express
+npm install express
