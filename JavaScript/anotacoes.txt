@@ -1,0 +1,75 @@
+Palavras Reservadas no JavaScript
+
+break
+case
+catch
+class
+const 
+continue
+debugger
+default
+in 
+instanceof
+new
+delete
+do
+else
+export
+extends
+finally
+for
+function
+if 
+import
+return
+super
+switch
+this
+throw
+try
+typeof
+var
+void
+while
+with
+yield
+
+
+Não se pode utilizar as palavras reservadas do que as já pre estabelecidas
+
+O JavaScript distingue letras maiuscula e minuscula
+
+Tudo é em inglês
+
+
+
+Como declarar uma função?
+
+Usamos a palavra reservada function
+
+Podemos dar um identificador
+
+Não esquecer de usar os parenteses
+
+Dentro das chaves colocamos as instruções
+
+O identificador pode ser qualquer um, porém é super importante usar verbos e descrever o que ele faz
+
+Não se preocupe se os identificadores ficarem grandes, desde que sejam descritivos o suficiente
+
+Use também o camelCase, quando usamos a segunda palavra com a primeira letra maiuscula. Assim fica mais fácil de ler.
+
+Para chamar uma função é só escrever o nome dela e colocar ()
+
+
+
+Algoritmos
+"É apenas uma sequencia finita de passos que se usa para resolver um problema,
+e algoritmos são muito mais amplos e muito mais antigos do que o computador[...]"
+Livro: "Algoritmos para viver, a ciência exata das decisões humanas"
+
+Pilares do pensamento computacional
+Decomposição
+Abstração
+Padrão
+Algoritmos

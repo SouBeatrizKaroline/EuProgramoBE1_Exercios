@@ -1,0 +1,9 @@
+Criando server.json
+
+constante
+const porta = 3333
+
+const -> Identificador (const significa que esse identificador é uma constante, ou seja, não ira mudar)
+porta -> Apelido
+= -> Atribuição
+3333 -> Valor (da Porta)

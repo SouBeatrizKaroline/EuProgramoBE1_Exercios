@@ -1,0 +1,58 @@
+HTTP/HTTPS - Protocolos
+Protocolos são um grupo de regras pré-definidas
+
+GET
+
+localhost é um servidor local
+
+
+
+Criando o primeiro GET
+
+Configurar uma rota que é um caminho na URL, ou seja, o endereço que colocamos no navegador
+
+Criar a função mostraOla() que produz a resposta a esssa requisição
+
+
+
+Configuração da rota
+
+É necessário manter toda a estrutura de criação do servidor (como exemplo do node, expresse e afins)
+
+Exemplo:
+            Essa etapa é parte da configuração da rota
+const router = express.Router()
+app.use(router.get('/ola', mostraOla))
+            Agora estamos dizendo para o aplicativo responder o verbo GET na rota/ola e chamar a função mostraOla
+
+            Parâmetros para definir requisição e resposta
+function mostraOla(request, response) {
+    response.send('Olá, mundo!")
+}           Conjunto de instruções que produz a resposta a essa requisição
+
+
+
+Objetos
+
+Utilize chaves no começo e no finally
+Cada informação se chama propriedade.
+Deverá conter um identificador,:(dois pontos) e o valor.
+E entre uma propriedade e outra utiliza-se a virgula
+
+{
+    nome: 'Simaria Conceição',
+    imagem: 'htpps://bit.ly/3LJIyOF',
+    minibio: 'Desenvolvedora e instrutora'
+}
+
+
+
+function mostraHora(request, response) {
+
+ const data = new Date()
+
+ const hora = data.toLocaleTimeString('pt-BR')
+
+ response.send(hora)
+
+}
