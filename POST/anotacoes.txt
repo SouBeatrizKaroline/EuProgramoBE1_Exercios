@@ -1,0 +1,67 @@
+Criando nosso primeiro POST
+
+Configurar uma rota que é um caminho na URL
+
+Definir a função criaMulher() que permite o envio de dados e produz a resposta a requisição
+O famoso request, response
+
+É necessário manter toda a estrutura de criação do servidor, e incluir as informações de configuração da rota POST /mulheres
+
+A primeira etapa da configuração da rota só precisa ser feita uma vez e já fizemos no GET
+
+app.use(router.post('/mulheres', criaMulher))
+Agora estamos dizendo para o aplicativo responder o verbo POST na rota/mulheres e chamar a função criaMulher
+
+fuction criaMulher (request, response) {
+    const novaMulher = {
+        id = uuidv4(),
+        nome: request.body.nome,
+        imagem: request.body.imagem,
+        minibio: request.body.minibio,
+    }
+    listaDeMulheres.push(novaMulher),
+    response.json(listaDeMulehres)
+}
+
+npm install uuid
+
+O verbo GET é o único que podemos visualizar no navegador facilmente
+
+Já o POST e alguns outros verbos só podem ser testados com ferramentas especiais para pessoas devs
+
+https://insomnia.rest/download
+
+Anatomia da requisição
+
+request
+
+Endereço
+localhost:3333/mulheres
+
+corpo(body)
+{"nome":"Maitê Lourenço",
+"imagem":"https://media.licdn.com",
+"minibio":"Criadora da BlackRocks Startups"
+}
+
+response
+Array das mulheres incluindo a nova mulher
+
+
+Testando o POST no Insomnia
+
+No canto superior esquerdo, clique em GET New Request para renomear. Use o nome da requisição criaMulher
+
+Altere o GET para POST e adicione a nossa URL
+
+Altere o Body para JSON
+
+Faça o corpo da requisição com nome, imagem (link) e minibio
+
+Não clique em Send (enviar) por enquanto
+
+Volte no VSCODE e complemente seu código com app.use(express.json()) abaixo de const app. Pois precisamos dizer que os dados que vão trafegar estão no formato JSON.
+
+Em seguida, rode no terminal node mulheres.js
+
+Volte no Insomnia e clique em Send (enviar)

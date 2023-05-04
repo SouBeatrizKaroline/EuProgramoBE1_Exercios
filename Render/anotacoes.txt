@@ -1,0 +1,31 @@
+https://dashboard.render.com/
+
+Após se cadastrar na plataforma render com sua conta do Github, na página inicial, clique em New (novo) e Web Service (serviço de web)
+
+Clique em Configure account (configurar conta) abaixo de Github e autorize todos os repositórios e clique em instalar
+
+Clique no seu repositório criado para o Back-End
+
+Complete as informações conforme abaixo:
+
+Nome: back-end
+
+Região: Ohio
+
+Branch: main
+
+Root: não mudar
+
+Runtime:node
+
+Build Command: npm install
+
+Start Command: node mulheres
+
+Opte por conta gratuita (free) e Create Web Service (crie serviço de web).
+
+Aguarde terminar de concluir o progresso. Em seguida, veja que onde foi medido o progresso ficou verde e gerou um link abaixo do nome
+
+Copie o seu link gerado e cole no navegador. 
+
+⚠️Lembre-se de adicionar após o link /mulheres, pois foi onde colocamos as informações.

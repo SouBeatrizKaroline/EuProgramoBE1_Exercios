@@ -1,0 +1,11 @@
+git init
+
+git config --global user.email seuemailaqui
+git config --global user.name seunomeaqui
+
+git remote likdoseurepoaqui
+
+git add .
+
+git commit -m 'sua mensagem aqui'
+git push
