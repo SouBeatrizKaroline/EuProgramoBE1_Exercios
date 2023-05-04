@@ -1,8 +1,8 @@
 {
-  "name": "euprogramobe1_exercios",
+  "name": "euprogramobe1_exercicios2",
   "version": "1.0.0",
-  "description": "> Turma 1",
-  "main": "index.js",
+  "description": "",
+  "main": "hora.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
