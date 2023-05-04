@@ -1,0 +1,154 @@
+Precisamos de um banco de dados para registrar e armazenar os dados após cada uso da API
+
+Objeto
+Organiza vários dados sobre a mesma pessoa
+
+Array
+Organiza uma lista com várias pessoas (com vários dados sobre cada uma)
+
+JSON 
+Arquivo que trafega dados pela web
+
+
+
+O que é CRUD?
+
+Ao usar nossa API em conjunto com um banco de dados é possível fazer as 4 principais operações:
+
+Create - criar dados
+Read - ler dados
+Update - atualizar dados
+Delete - deletar dados
+
+Tem tudo a ver com a lógica de programação
+
+HTTP
+POST     GET     PATCH      DELETE
+
+CRUD
+CREATE   READ    UPDATE     DELETE
+
+MONGODB
+SAVE      FIND    SAVE      FINDBYIDANDDELETE
+
+As operações de CRUD vão aparecer dentro das funções mostraMulheres criarMulher(), corrigeMulher() e deletaMulher()
+
+
+
+Como integrar nosso banco de dados
+
+Criar conta no MongoDB
+
+Configurar espaço onde os dados ficarão salvos no MongoDB
+
+Pegar informações do banco de dados e usar no projeto
+
+Criar modelo do objeto mulher e lista(coleção de mulheres)
+
+Editar funções para salvar informações no banco de dados
+
+https://www.mongodb.com/
+
+Na sua tela inicial, vá até Network Access (acesso à rede)
+
+Em seguida, clique em Add IP Address
+
+Selecione a opção a seguir e clique em confirmar
+
+No lado superior esquerdo, clique Database e em Build a Database (crie um banco de dados)
+
+Selecione a opção free (livre), provider (provedor) acess, região São Paulo, nome ClusterMulheres e clique em Create (criar)
+
+Guarde seu login e senha para usar posteriormente e clique em Create User (criar usuário). Confirme as informações e clique em Finish and Close (terminar e fechar)
+
+Clique em Connect (conectar)
+
+Selecione a opção Connect application (conectar aplicativo) e em Close (fecha)
+
+Guarde as informações geradas para usar posteriormente
+
+Este link é uma string de conexão, esta informação é essencial para qualquer banco de dados pois ela especifica informações sobre uma fonte de dados e os meios de conexão com ela. Vamos precisar dela para que o nosso servidor Node possa se comunicar com o MongoDB.
+
+npm install mongoose
+
+module.exports
+Deixa nosso bloco de código disponível para usarmos em outro arquivo quando chamarmos a função
+
+
+
+No terminal instale o pacote Mongoose, usando o comando npm install mongoose e verifique no package.json se foi instalado
+
+Crie um novo arquivo chamado bancoDeDados.js
+
+Dentro deste arquivo, faça os seguintes comandos
+
+Localize onde você salvou a senha e a string da aula anterior. Copie a senha e cole no espaço de senha da string
+
+Copie a string e cole a seguir
+
+Adicione os seguintes comandos dentro de try e complemente
+
+Em mulheres.js, adicione a constante e complemente
+
+Rode no terminal node mulheres
+
+modeloRegras do modelo Objeto mulher
+
+Collection
+Lista de composta pelos objetos de mulheres, vou chamar essa lista de divas
+
+
+const mongoose = require('mongoose')
+
+const MulherSchema = new mongoose.Schema({ // Definindo um objeto
+    nome:{
+        type:String, //Definindo qual o tipo do dado da propriedade. Exemplo: texto ou número
+        require: true // Definindo se o campo é obrigatorio ou não, true = obrigatorio false = opciona
+    }
+})
+
+module.exports = mongoose.model('diva', MulherSchema)
+
+
+
+Função
+criaMulher()  mostraMulheres()  corrigeMulher()   deletaMulher()
+
+CRUD
+CRATE           READ              UPDATE         DELETE
+
+MONGODB
+SAVE            FIND              SAVE            FUNDBYIDANDDELETE
+
+
+Const Mulher = require('./ModelMulher')
+// Importação do modelo do servidor
+
+async function mostraMulheres(request, response) {
+// Quando precisamos falar com um serviço externo, estamos lidando com JavaScript assíncrono. Logo a função precisa conter a sintaze de async
+    try{
+        const mulheresVindasDoBancoDeDados = await // Como estamos falando com o MongoDB, precisamos usar o await
+
+        Mulher.find() // Criamos a função find() para se comunicar com o banco de dados e ler os dados
+        response.json(mulheresVindasDoBancoDeDados)
+    } catch(err){ // Como o MongoDB é um serviço externo e as chances de falhas são maiores usamos também a sintaxe try/catch
+        console.log(err)
+    }
+}
+
+
+
+find()
+Função do mongoose para se comunicar com o banco de dados. Ela guarda o resultado na constante e envia esse objeto na resposta da requisição
+
+
+
+
+Em mulheres.js, apague a lista inicial de mulheres
+
+Apague também no response.json e complemente o código
+
+Adicione a constante e complemente
+
+E adicione dentro de try o seguinte comando
+
