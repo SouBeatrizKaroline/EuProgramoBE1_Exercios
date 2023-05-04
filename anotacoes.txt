@@ -1,0 +1,13 @@
+Sempre dividir o problema em pequenos passos logicos
+
+Padrão em todas as chamadas: verbo, request, response, endereço, uma lógica que permita receber dados do resquest e enviar resposta
+
+Ao final de cada código sempre testar
+
+Configurar o servidor é apenas uma vez
+
+Toda vez que usar um verbo precisa permitir o app usa-lo
+
+Precisa rodar o servidor para testa-lo
+
+O único que conseguimos testar no navegador é o GET, o resto é numa ferramenta como exemplo do Insomnia

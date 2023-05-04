@@ -1,0 +1,34 @@
+Configurar uma rota que é um caminho URL
+
+Definir a função deletaMulher() que permite o envio do id na rota e produz a resposta a requisição
+
+É necessário manter toda estrutura de criação do servidor, incluindo as informações de configuração da rota POST /mulheres.
+
+A primeira etapa da configuraçõa da rota só precisa ser feita uma vez (que é no GET)
+
+app.use(router.delete('/mulheres/:id', deleteMulher))
+// agora estamos dizendo para o aplicativo responder o verbo DELETE na rota /mulheres/:id e chamar a função deletaMulher
+
+function deletaMulher(request, response) {
+    // função que cria uma condição para retornar a mulher que deve ser deletada da lista
+    function todasMenosEla (mulher) {
+        if (mulher.id != request.params.id) {
+
+            return mulher
+
+        }
+    }
+    // Função que serve para filtrar uma lista atendendo a uma condição
+    const mulheresQueFicaram = listaDeMulheres.filter(todasMenosEla)
+    // envio da resposta
+    response.json(mulheresQueFicaram)
+}
+
+
+Operado (!==)
+Esse é o operador que representa o "diferente de", podemos usá-lo para comparar valores no Javascript
+
+Função(filter())
+É a função que serve para percorrer um array, filtrar e retornar uma nova lista de acordo com uma condição
+
+ 

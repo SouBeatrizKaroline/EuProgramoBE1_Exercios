@@ -1,0 +1,71 @@
+Eu quisesse corrigir meus dados para incluir que agora sou também instrutora da PrograMaria
+
+Ao acessar o endereço localhost:333/mulheres/:id ao preencher o id da mulher no final da rota, os dados que queremos corrigir no corpo da requisição, esperamos o resultado da lista atual incluindo os dados novos da mulher que acabamos de alterar
+
+
+Criando nosso primeiro patch
+
+Confirgurar uma rota que é um caminho na URL
+
+Definir a função corrigeMulher() que permite o envio dos dados e produz a resposta a essa requisição
+
+É necessário manter toda a estrutura de criação do servidor que aprendemos nas aulas passadas e vamos incluir as informações de configuração da rota POST /mulheres.
+
+A primeira etapa da configuração da rota só precisa ser feita uma vez e já fizemos no GET
+
+app.use(router.patch('/mulheres/:id', corrigeMulher)) // Agora estamos dizendo para o aplicativo responder o verbo PATCH na rota/mulheres/:id e chamar a função corrigeMulher
+
+function corrigeMulher(request, response) {
+    // função para encontrar mulher pelo id (inicio da função)
+    function encontraMulher(mulher) {
+        if (mulher.id === request.params.id) {
+            return mulher
+    }
+}
+// função para encontrar mulher pelo id (final da função)
+// Operação para encontrar mulher com a função find() do javascript que serve para encontrar e retornar dados num array
+const mulheresEncontradas = listaDeMulheres.find(encontraMulher)
+
+//  Bloco de condicionais para permitir que cada dado possa ser corrigido caso seja informado no corpo da requisição
+if (request.body.nome) {
+    mulherEncontrada.nome = request.body.nome
+}
+if (request.body.minibio) {
+    mulherEncontrada.minibio = request.body.minibio
+}
+if (request.body.imagem) {
+    mulherEncontrada.imagem - request.body.imagem
+}
+
+// Enviar a resposta 
+response.json(listaDeMulheres)
+}
+
+
+
+Condicional (if)
+É a palavra reservada que usamos quando precisamos que o computador execute uma ou mais instuções caso uma condição seja atendida
+
+Operador (===)
+Diferente do operador apenas com um igual(=) que significa atribuir, o operadores com três iguais representa igualdade estrita, ou seja um valor exatamente igual a.
+
+Função (find())
+É uma funçao que serve para percorrer um array, encontrar e retornar uma informação de acordo com uma condição
+
+
+Request 
+Preenche o id da mulher que deseja corrigir os dados no final do endereço
+
+Endereço(params)
+localhost:3333/mulheres/:id
+
+Corpo(body)
+{
+    "nome":"Maitê Lourenço",
+    "imagem":"https://media.licdn.com",
+    "minibio":"Criadora da BlackRocks Startups"
+}
+
+Respose
+Array das mulheres incluindo dados da mulher corrigida
+
