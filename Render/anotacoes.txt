@@ -29,3 +29,22 @@ Aguarde terminar de concluir o progresso. Em seguida, veja que onde foi medido o
 Copie o seu link gerado e cole no navegador. 
 
 ⚠️Lembre-se de adicionar após o link /mulheres, pois foi onde colocamos as informações.
+
+
+No render 
+
+No Render, clique em back end:
+
+Em Environment, clique em Add Environment Variable:
+
+De volta ao VSCODE, em .env copie apenas o início do código:
+
+Volte no Render e cole na Key:
+
+De Volta ao VSCODE ,copie a string de conexão:
+
+Volte no Render e cole no Valor e salve:
+
+Clique em Manual Deploy e em seguida Deploy lastest commit
+
+Após concluir, copie o link gerado e cole no navegador:
