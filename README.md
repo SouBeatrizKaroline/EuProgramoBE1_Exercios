@@ -13,6 +13,15 @@ Exercicios
 - MongoDB
 - Insomnia
 
+## Comandos importantes
+
+- npm init -y
+- npm install express
+- npm install mongoose
+- npm install uuid
+- npm install dotenv
+- npm install cors
+
 ## 💙 Contato
 
 ebeatrizkcs@gmail.com
