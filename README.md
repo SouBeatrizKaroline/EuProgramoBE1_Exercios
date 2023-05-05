@@ -9,6 +9,9 @@ Exercicios
 - JS
 - Node.JS
 - Git e Github
+- Render
+- MongoDB
+- Insomnia
 
 ## 💙 Contato
 
