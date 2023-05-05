@@ -10,3 +10,30 @@ Cross-origin Resource Sharing ou em português Compartilhamento de recursos de o
 
 npm install cors
 
+
+
+No terminal, instale o pacote com o comando npm install dotenv
+
+Crie um arquivo chamado .env e code o seguinte
+
+Vá no arquivo bancoDeDados.js e recorte a string de conexão e cole no .env
+
+No arquivo .gitignore adicione o .env ao código
+
+Crie um novo arquivo chamado .env_example e adicione o seguinte código
+
+Em bancoDeDados, complemente seu código com require…:
+
+Atualize seu código em await…:
+⚠️Lembre-se de salvar suas alterações!
+
+CORS
+
+No terminal, instale o pacote com o comando npm install cors
+
+Adicione a const cors…:
+
+Adicione o app.use..:
+
+
+⚠️Lembre-se de salvar suas alterações!
