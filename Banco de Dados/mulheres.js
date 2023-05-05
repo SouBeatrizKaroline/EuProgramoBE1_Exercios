@@ -1,6 +1,5 @@
 const express = require("express") // aqui estou iniciando o express
 const router = express.Router() // aqui estou configurando a primeira parte da rota
-const { v4:uuidv4 } = require('uuid')
 
 const conectaBancoDeDados = require('./bancoDeDados') //aqui estou ligando ao arquivo bancoDeDaos
 conectaBancoDeDados() // aqui estou chamndo a função que conecta o banco de dados
@@ -24,27 +23,26 @@ async function mostraMulheres(request, response){
 }
 
 //POST
-function criaMulher (request, response) {
-    const novaMulher = {
-        id: uuidv4(),
+async function criaMulher (request, response) {
+    const novaMulher = new Mulher({
         nome: request.body.nome,
         imagem: request.body.imagem,
         minibio: request.body.minibio,
+        citacao: request.body.citacao,
+    })
+    try {
+        const mulherCriada = await novaMulher.save()
+        response.status().json(mulherCriada)
+    }catch(erro){
+        console.log(erro)
     }
-    listaDeMulheres.push(novaMulher),
-
-    response.json(listaDeMulehres)
 }
 
 //PATCH
-function corrigeMulher(request, response) {
-    function EncontraMulher(mulher) {
-        if (mulher.id === request.params.id) {
-            return mulher
-        }
-    }
+async function corrigeMulher(request, response) {
+try {
+const mulherEncontrada = await Mulher.findById(request.params.id)
 
-    const mulherEncontrada = mulheres.find(encontraMulher)
 
     if (request.body.nome) {
         mulherEncontrada.nome = request.body.nome
@@ -56,20 +54,26 @@ function corrigeMulher(request, response) {
         mulherEncontrada.imagem = request.body.imagem
     }
 
-    response.json(mulheres)
-}
-
-function deletaMulher(request, response) {
-    function todasMenosEla (mulher) {
-        if (mulher.id != request.params.id) {
-
-            return mulher
-
-        }
+    if (request.body.citacao) {
+        mulherEncontrada.citacao = request.body.citacao
     }
 
-    const mulheresQueFicaram = listaDeMulheres.filter(todasMenosEla)
-    response.json(mulheresQueFicaram)
+    const mulherAtualizadaNoBancoDeDados = await mulherEncontrada.save()
+    response.json(mulherAtualizadaNoBancoDeDados)
+
+}catch (erro){
+console.log(erro)
+}
+}
+
+//DELETE
+async function deletaMulher(request, response) {
+try {
+await  Mulher.findByIdAndDelete(request.params.id)
+response.json({mensagem:'Mulher deletada com sucesso'})
+} catch(erro){
+    console.log(erro)
+}
 }
 
 //PORTA
