@@ -1,0 +1,12 @@
+Informações Sensíveis
+Exemplos: Credencial de pessoa usuária, senhas, dados pessoais, links que permitem acessar dados, entre outros.
+
+URL mongodb
+
+npm install dotenv
+
+Liberação Compressing
+Cross-origin Resource Sharing ou em português Compartilhamento de recursos de origem cruzada
+
+npm install cors
+
