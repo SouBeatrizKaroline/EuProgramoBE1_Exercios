@@ -21,6 +21,8 @@ Exercicios
 
 > npm install mongoose
 
+> npm install mongodb
+
 > npm install uuid
 
 > npm install dotenv
